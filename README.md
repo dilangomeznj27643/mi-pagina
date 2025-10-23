@@ -1,1 +1,63 @@
-# mi-pagina
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas Fusionadas</title>
+    <style>
+        .pagina {
+            display: none;
+        }
+        .pagina.activa {
+            display: block;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botones para navegar entre las páginas -->
+    <div>
+        <button onclick="mostrarPagina('pagina1')">FORMULARIO</button>
+        <button onclick="mostrarPagina('pagina2')">JUEGO MEMORIA</button>
+        <button onclick="mostrarPagina('pagina3')">PAGINA PRINCIPAL</button>
+    </div>
+
+    <!-- Contenido de las páginas -->
+    <div id="pagina1" class="pagina activa">
+        <iframe src="file:///C:/Users/bel-s208-lt-034.UMD/Downloads/10-1/FORMULARIO.html" title="FORMULARIO"></iframe>
+    </div>
+
+    <div id="pagina2" class="pagina">
+        <iframe src="file:///C:/Users/bel-s208-lt-034.UMD/Downloads/10-1/JUEGO%20DE%20MEMORIA.html" title="JUEGO MEMORIA"></iframe>
+    </div>
+
+    <div id="pagina3" class="pagina">
+        <iframe src="file:///C:/Users/bel-s208-lt-034.UMD/Downloads/10-1/PAGINA%20PRINCIPAL.html" title="PAGINA PRINCIPAL"></iframe>
+    </div>
+
+    <script>
+        // Función para mostrar la página seleccionada
+        function mostrarPagina(pagina) {
+            // Ocultar todas las páginas
+            const paginas = document.querySelectorAll('.pagina');
+            paginas.forEach(p => p.classList.remove('activa'));
+
+            // Mostrar la página seleccionada
+            const paginaSeleccionada = document.getElementById(pagina);
+            paginaSeleccionada.classList.add('activa');
+        }
+    </script>
+
+</body>
+</html>
